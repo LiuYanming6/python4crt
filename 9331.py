@@ -66,7 +66,7 @@ def comNexfiStd():
 	global FILE, IP_1_3, IP_4
 	
 	crt.Screen.WaitForString("Please press Enter to activate")
-	crt.Sleep(20000)
+	crt.Sleep(100000)
 	crt.Screen.Send('\r')
 	crt.Screen.Send('ifconfig br-lan 192.168.1.111 netmask 255.255.255.0\r')
 	crt.Screen.WaitForString("root@OpenWrt")
@@ -88,10 +88,10 @@ def comNexfiStd():
 def main():
 
 	crt.Screen.Synchronous = True
-	# while True:
-	# 	comBreed()
-	# 	comBreedTo9331()
-	comNexfiStd()
+	while True:
+		comBreed()
+		comBreedTo9331()
+		comNexfiStd()
 
 
 	crt.Screen.Synchronous = False
