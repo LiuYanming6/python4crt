@@ -15,10 +15,10 @@ DOWNLOAD_PATH='http://%s/automate/' % PC_IP
 FIRMWARE_PATH='%s/%s' % (DOWNLOAD_PATH, FIRMWARE)
 NEXFI_STD_PATH='%s/%s' % (DOWNLOAD_PATH, NEXFI_STD)
 
-
+# equel to printf "\xdd\xdd\xdd\xdd\xdd\xdd" | dd conv=notrunc of=breed.cat.bin bs=1 seek=$((0x1fc00))
 def createBreed():
 	mac = crt.Dialog.Prompt("Enter mac:","mac addr", "", False)
-	b=b''
+	b=b''	#定义一个buffer，放6字节的mac地址
 	for i in range(0, len(mac), 2):
 	    byte_dat = struct.pack('B', int(mac[i: i + 2], 16))
 	    b = b + byte_dat
